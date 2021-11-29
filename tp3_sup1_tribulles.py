@@ -8,7 +8,7 @@ def tribulles(l):
         # attention que il faut s'arreter avant le dernier element de la liste. En effet,
         # l'avant-dernier est comparé avec le dernier... -> cfr indice "i" utilisé pour accéder
         # à l'élément...
-        for i in range(0, n-1):  # attention - cfr tableau en dessous
+        for i in range(0, n-j-1):  # attention - cfr tableau en dessous
             if l[i] > l[i + 1]:
                 temp = l[i + 1]
                 l[i + 1] = l[i]

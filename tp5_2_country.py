@@ -11,7 +11,7 @@ def get_country(l, name):
 l = [
     { "City": "Bruxelles", "Country": "Belgium" },
     { "City": "Berlin",    "Country": "Germany" },
-    { "City": "Paris",     "Country": "France" }
+    { "City": "Paris",     "Country": "France"  }
 ]
 
 print(get_country(l, "Bruxelles"))

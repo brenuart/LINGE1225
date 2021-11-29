@@ -12,7 +12,7 @@ def payeTaxi(M,P):
 
         if price > maxPrice:
             maxPrice = price
-            courseLaPlusChere = course[0]
+            courseLaPlusChere = course[0] # le numéro de la course est dans le premier élément...
 
     return [totalPrice, courseLaPlusChere]
 
@@ -25,7 +25,11 @@ def distance(xa,ya,xb,yb):
 
 # -----------------------------
 
-m1 = [[1, -6, -3, 3, -5], [2, 1, 9, -1, 4], [3, 2, 3, 1, 3], [4, 2, -4, -5, -10]]
+m1 = [
+    [1, -6, -3, 3, -5],
+    [2, 1, 9, -1, 4],
+    [3, 2, 3, 1, 3],
+    [4, 2, -4, -5, -10]]
 
 print(payeTaxi(m1, 9)) # [288, 4]
 print(payeTaxi(m1, 5)) # [160, 4]

@@ -30,13 +30,16 @@ def average(mat):
 
     return [moyenneParPersonne, moyenneParSoiree]
 
+
 # ----------------------
+# Alternative
+#
 # Les deux boucles "extérieures" sont similaires -> on peut les regrouper
 #
 def average2(mat):
     # Input:
-    # - colonne -> personne
     # - ligne   -> soirée
+    # - colonne -> personne
     # - valeur: nombre de bières bues par la personne durant la soirée
 
     nbSoiree = len(mat)
@@ -59,6 +62,8 @@ def average2(mat):
 
 
 # ----------------------
+# Alternative
+#
 # Les deux boucles "interieures" sont similaires -> on peut les regrouper
 #
 def average3(mat):
@@ -86,6 +91,8 @@ def average3(mat):
 
 
 # ----------------------
+# Alternative
+#
 # Propagation des erreurs: le calcul des moyennes est pas "top" -> mieux vaut faire la somme totale et diviser par le
 # nombre de valeur une fois la somme obtenue
 #

@@ -8,7 +8,7 @@ def remplace(message, abbreviation):
         if word in abbreviation:
             word = abbreviation[word]
 
-        decoded += word + ' ' # les blancs sont des separateurs -> ils ne font donc pas partie des mots et il faut les rajouter entre chaque mot
+        decoded += word + ' ' # les blancs sont des séparateurs -> ils ne font donc pas partie des mots et il faut les rajouter entre chaque mot
 
     return decoded
 

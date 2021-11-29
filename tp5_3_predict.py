@@ -38,5 +38,4 @@ lst = [
     " un espace au début et un autre à la fin "
 ]
 
-
 print(predict(lst, "un"))

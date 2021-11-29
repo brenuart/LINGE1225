@@ -2,20 +2,27 @@
 def position(lst, lettre):
     positions = {}
 
+    # On parcours les mots de la liste...
     for mot in lst:
-        pos = 0
-        for c in mot:
-            if c == lettre:
-                recordPosition(positions, mot, pos)
-            pos += 1
+
+        # On parcours les lettres du mot...
+        for i in range(len(mot)):
+
+            # Si la lettre courante est la lettre recherchée, alors on appelle la méthode "recordPosition" qui se
+            # chargera d'enregistrer le fait que la "lettre" est trouvée à la position "i" dans le mot "mot".
+            #
+            if mot[i] == lettre:
+                recordPosition(positions, mot, i)
 
     return positions
 
 
 def recordPosition(positions, mot, pos):
+    # Ajout d'une nouvelle entrée dans le dictionnaire "positions" si nécessaire...
     if pos not in positions:
         positions[pos] = []
 
+    # Ajout du "mot" à la liste correspondant à la position "pos"
     listeDeMots = positions[pos]
     listeDeMots.append(mot)
 

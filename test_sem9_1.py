@@ -12,7 +12,8 @@ def moyenne_mobile02(data,k):
 
     return result
 
-# calcul moyenne sous sequence a partir de "pos" et longueur "k"
+
+# calcul moyenne d'une sous-séquence de "data" débutant à la position "pos" et de longueur "k"
 #
 def calculMoyenne(data, pos, k):
     somme = 0

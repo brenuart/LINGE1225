@@ -6,6 +6,7 @@ def payeTaxi(M,P):
 
     for course in M:
         d = distance(course[1], course[2], course[3], course[4])
+        print(d)
         price = prix(d, P)
 
         totalPrice += price

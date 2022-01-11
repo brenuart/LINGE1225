@@ -1,5 +1,16 @@
 def trouver_paires(no_telephones):
     paires = [] # liste qui contiendra les paires
+
+    #
+    # (BRE) Bien que cette solution fonctionne correctement elle présente un gros soucis de performance si le
+    # dictionnaire no_telephones contient beaucoup d'entrées. En effet, supposons que le dictionnaires contiennent
+    # 100 entrées, le "if" imbriqué dans les deux boucles "for" sera exécuté 100*100 = 10.000 fois. Le nombre
+    # d'exécution est donc proportionnel au CARRE de la taille du dictionnaire (1000 entrées -> 1.000.000 d'exécutions)
+    #
+    # Dans ce cas, une approche telle que celle proposée dans /EXAMEN_Moyen_Telecom.py est préférable. Cette dernière
+    # est d'ailleurs comparable à la stratégie adoptée pour la méthode "moyenne_menages()" ci-dessous...
+    #
+
     for personneA, numA in no_telephones.items():
         for personneB, numB in no_telephones.items():
             if (numA == numB) and (personneA != personneB) and ([personneA, personneB] not in paires) and ([personneB, personneA] not in paires):

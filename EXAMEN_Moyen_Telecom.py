@@ -1,3 +1,9 @@
+#
+# Note:
+#   Prendre connaissance des commentaires ajoutés à la correction proposée par les professeurs dans le fichier
+#   /corrections/Examen_Moyen_Telecom.py
+#
+
 def trouver_paires(no_telephones):
     # Première étape: construction d'un dictionnaire dont les clés sont les numéros
     # de téléphone et la valeur une liste des personnes qui ont cet numéro.

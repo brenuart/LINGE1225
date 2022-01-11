@@ -3,14 +3,17 @@ def remplace(message, abbreviation):
     # split (decoupe) du message en mots -> separateur = blanc (" ")
     words = message.split(" ")
 
-    decoded = ""  # message décodé avec les abbréviations remplacées par leur correspondant
-    for word in words:
-        if word in abbreviation:
-            word = abbreviation[word]
+    phrase = ""
+    for w in words:
+        if w in abbreviation:
+            phrase += abbreviation[w]
+            phrase += " "  # les blancs sont des séparateurs -> ils ne font donc pas partie des mots
+                           # et il faut les rajouter entre chaque mot
 
-        decoded += word + ' ' # les blancs sont des séparateurs -> ils ne font donc pas partie des mots et il faut les rajouter entre chaque mot
+    # suppression du blanc "en trop" à la fin de la nouvelle phrase
+    phrase = phrase.rstrip()
 
-    return decoded
+    return phrase
 
 # -------
 

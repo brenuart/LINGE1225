@@ -20,7 +20,7 @@ def message(lst):
         receiver = msg[1]
 
         # On recherche le "senderRecord" (le Dictionnaire) qui correspond au "sender" dans la liste (et on le crée
-        # si il n'existe pas encore - première fois qu'on rencontre un message envoyé par ce "sender")
+        # si il n'existe pas encore - càd la première fois qu'on rencontre un message envoyé par ce "sender")
         #
         senderRecord = findOrCreateSenderRecord(senderRecords, sender)
 

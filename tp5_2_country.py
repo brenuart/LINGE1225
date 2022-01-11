@@ -15,4 +15,4 @@ l = [
 ]
 
 print(get_country(l, "Bruxelles"))
-print(get_country(l, "Londre"))
+print(get_country(l, "Londres"))

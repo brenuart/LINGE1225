@@ -1,35 +1,9 @@
 def bataille(j1, j2):
-    # hpothese: meme nombre de carte pour les 2 joueurs
-
     # j1 est une liste de deux lignes:
     # - la premiere ligne contient les ROLES des cartes
     # - la seconde ligne contient les COULEURS des cartes
 
-    # Valeur d'une carte en fonction de son role:
-    #   Carte   Code   Value
-    #   1 (as)  1      14
-    #   2       2      2
-    #   3       3      3
-    #   4       4      4
-    #   5       5      5
-    #   6       6      6
-    #   7       7      7
-    #   8       8      8
-    #   9       9      9
-    #   10      10     10
-    #   Valet   11     11
-    #   Dame    12     12
-    #   Roi     13     13
-    # En d'autres termes, la valeur est égale au code du role sauf pour le code A (l'AS) qui gagne tout le temps.
-
-    # Couleur par ordre décroissant:
-    # - coeur   -> 1
-    # - carreau -> 2
-    # - trefle  -> 3
-    # - pique   -> 4
-    # En d'autres termes, la couleur avec le code le plus petit gagne.
-
-    # La partie est terminée lorsqu'un des deux joueurs n'a plus de cartes
+    # La partie est terminée dès qu'un des deux joueurs n'a plus de cartes
 
     while len(j1[0]) > 0 and len(j2[0]) > 0:
         role1 = j1[0].pop(0)
@@ -54,6 +28,34 @@ def bataille(j1, j2):
         return { "gagnant": 2, "tas": j2 }
 
 
+# Compare deux cartes et détermine laquelle est gagnante
+# Retourne True si la carte représentée par role1/couleur1 est supérieure à la carte représentée par role2/couleur2.
+# Retourne False dans le cas contraire.
+#
+# Valeur d'une carte en fonction de son role:
+#   Carte   Code   Valeur
+#   1 (as)  1      14
+#   2       2      2
+#   3       3      3
+#   4       4      4
+#   5       5      5
+#   6       6      6
+#   7       7      7
+#   8       8      8
+#   9       9      9
+#   10      10     10
+#   Valet   11     11
+#   Dame    12     12
+#   Roi     13     13
+# En d'autres termes, la valeur est égale au code du role sauf pour le code A (l'AS) qui gagne tout le temps.
+#
+# Couleur par ordre décroissant:
+# - coeur   -> 1
+# - carreau -> 2
+# - trefle  -> 3
+# - pique   -> 4
+# En d'autres termes, la couleur avec le code le plus petit gagne.
+#
 def estGagnant(role1, couleur1, role2, couleur2):
     valeur1 = valeurRole(role1)
     valeur2 = valeurRole(role2)
@@ -63,12 +65,13 @@ def estGagnant(role1, couleur1, role2, couleur2):
     else:
         return valeur1 > valeur2
 
+# Donne la valeur d'une carte en fonction de son role
+#
 def valeurRole(role):
     if role == 1:
         return 14
     else:
         return role
-
 
 # --------------------------------------------------------------------------------
 j1 = [
@@ -80,11 +83,3 @@ j2 = [
     [1, 2, 3]
 ]
 print(bataille(j1,j2))
-
-
-# 4/2, 2/1, 3/4       4/1, 2/2, 3/3
-# 2/1, 3/4            2/2, 3/3, 4/2, 4/1
-# 3/4, 2/1, 2/2       3/3, 4/2, 4/1
-# 2/1, 2/2            4/2, 4/1, 3/4, 3/3
-# 2/2                 4/1, 3/4, 3/3, 2/1, 4/2
-#                     3/4, 3/3, 2/1, 4/2, 2/2, 4/1

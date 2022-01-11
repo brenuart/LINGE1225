@@ -8,24 +8,18 @@ def position(lst, lettre):
         # On parcours les lettres du mot...
         for i in range(len(mot)):
 
-            # Si la lettre courante est la lettre recherchée, alors on appelle la méthode "recordPosition" qui se
-            # chargera d'enregistrer le fait que la "lettre" est trouvée à la position "i" dans le mot "mot".
+            # Si la lettre courante (mot[i]) est la lettre recherchée, alors on ajoute le mot à la liste qui
+            # est associée à la clé ayant comme "nom" la position courante.
             #
             if mot[i] == lettre:
-                recordPosition(positions, mot, i)
+                # Aucune clé pour la position courante (i) -> ajout d'une nouvelle avec une liste vide comme valeur initiale
+                if i not in positions:
+                    positions[i] = []
+
+                # On ajoute le mot à la fin de la liste correspondant à la position
+                positions[i].append(mot)
 
     return positions
-
-
-def recordPosition(positions, mot, pos):
-    # Ajout d'une nouvelle entrée dans le dictionnaire "positions" si nécessaire...
-    if pos not in positions:
-        positions[pos] = []
-
-    # Ajout du "mot" à la liste correspondant à la position "pos"
-    listeDeMots = positions[pos]
-    listeDeMots.append(mot)
-
 
 # ------------------
 
@@ -35,10 +29,11 @@ print(position(lst, "x"))   # {}
 print(position([], "e"))    # {}
 
 # Plusieurs mots avec la même position...
-# ... et des mots avec plusieurs fois la lettre
+# ... et des mots avec plusieurs fois la lettre recherchée
 print(position(lst, "o"))   # {1: ['bonjour', 'bonsoir', 'cours', 'souris'], 4: ['bonjour', 'bonsoir'], 0: ['ordinateur']}
 
 # Et si la liste contient plusieurs fois le même mot?
 # ... peut-être faudrait-il ne pas ajouter le mot "bonjour" une seconde fois dans le résultat ?
+# (non implémenté - laissé comme exercise..)
 lst = ["bonjour", "bonsoir", "bonjour"]
 print(position(lst, "o"))   # {1: ['bonjour', 'bonsoir', 'bonjour']}

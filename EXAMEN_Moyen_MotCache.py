@@ -1,3 +1,8 @@
+# Note:
+#   Cette solution est "identique" au correctif proposé par le professeur...
+#   ... il suffit de replacer/copier le contenu des différentes "sous" méthodes
+#   dans les boucles "for" où elles sont utilisées ci-dessous.
+#
 def motCache(grille, mot):
     # dimensions de la grille
     #
